@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: installplan-operator
+  name: installplan-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: installplan-operator
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: installplan-operator
+    spec:
+      serviceAccount: installplan-operator
+      containers:
+        - name: installplan-operator
+          image: docker.io/larsks/installplan-operator:95f76033
+          imagePullPolicy: IfNotPresent
+          restartPolicy: OnFailure
+          volumeMounts:
+            - name: updateconfig
+              mountPath: /subscriptions
+              readOnly: true
+          env:
+            - name: IPO_APPROVE_UPDATES
+              value: "false"
+
+      volumes:
+        - name: updateconfig
+          configMap:
+            name: updateconfig

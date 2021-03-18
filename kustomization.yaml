@@ -1,0 +1,8 @@
+namespace: installplan-operator
+
+resources:
+  - namespace.yaml
+  - serviceaccount.yaml
+  - deployment.yaml
+  - clusterrole.yaml
+  - rolebinding.yaml

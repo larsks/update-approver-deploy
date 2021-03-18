@@ -1,0 +1,4 @@
+subscriptions:
+  - name: openshift-pipelines-operator-rh
+    namespace: openshift-operators
+    version: redhat-openshift-pipelines.v1.3.0

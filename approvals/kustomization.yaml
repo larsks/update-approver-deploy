@@ -1,0 +1,13 @@
+namespace: installplan-operator
+
+configMapGenerator:
+  - name: installplan-operator-config
+    files:
+      - kubevirt-hyperconverged.yaml
+      - local-storage-operator.yaml
+      - metering-operator.yaml
+      - piplines-operator-rh.yaml
+
+
+generatorOptions:
+  disableNameSuffixHash: true

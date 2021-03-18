@@ -1,0 +1,4 @@
+subscriptions:
+  - name: kubevirt-hyperconverged
+    namespace: openshift-cnv
+    version: kubevirt-hyperconverged-operator.v2.6.0
